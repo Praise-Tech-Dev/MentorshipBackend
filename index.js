@@ -13,6 +13,16 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(cookieParser());
+
+const allowOrigin = ["http://localhost:5173"];
+app.use(
+  cors({
+    origin: allowOrigin,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  })
+);
+
 app.use("/api/auth", AuthRoutes);
 app.use("/api/profile", ProfileRoutes);
 
