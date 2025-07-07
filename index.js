@@ -15,6 +15,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", AuthRoutes);
 app.use("/api/profile", ProfileRoutes);
+
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to the Mentorship Backend API' });
+});
 //connecting to database
 connectDb();
 
