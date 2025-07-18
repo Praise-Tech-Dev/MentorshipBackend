@@ -14,7 +14,7 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(cookieParser());
 
-const allowOrigin = ["http://localhost:5173"];
+const allowOrigin = ["http://localhost:5173", "https://mentorship-frontend-pi.vercel.app"];
 app.use(
   cors({
     origin: allowOrigin,
